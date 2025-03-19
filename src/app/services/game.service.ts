@@ -190,7 +190,7 @@ export class GameService {
 
   resetGame(): void {
     this.timerService.resetTimer();
-    this.gameStateSubject.next({ ...this.initialState });
+    this.gameStateSubject.next({ ...this.initialState, difficulty: this.gameStateSubject.value.difficulty, });
   }
 
   resetToStartScreen(): void {

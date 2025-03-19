@@ -33,7 +33,7 @@ export class ScoreboardComponent {
   onNewGame(): void {
     if (
       confirm(
-        'Return to difficulty selection? Your current progress will be lost.'
+        'Are you sure you want to return to difficulty selection?\nYour current progress will be lost.'
       )
     ) {
       this.newGame.emit();
@@ -43,7 +43,7 @@ export class ScoreboardComponent {
   onRestartGame(): void {
     if (
       confirm(
-        'Are you sure you want to restart the game? Your current progress will be lost.'
+        'Are you sure you want to restart the game?\nYour current progress will be lost.'
       )
     ) {
       this.restart.emit();

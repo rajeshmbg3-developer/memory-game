@@ -4,6 +4,11 @@
 A fun and interactive memory game where players flip cards to find matching pairs. Test your memory and try to match all pairs in the fewest moves possible!
 
 
+<img width="1000" alt="image" src="./src/assets/images/1.png">
+<img width="1000" alt="image" src="./src/assets/images/2.png">
+<img width="1000" alt="image" src="./src/assets/images/3.png">
+
+
 ## Installation
 
 Install the game with git

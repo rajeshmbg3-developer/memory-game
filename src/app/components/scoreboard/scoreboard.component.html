@@ -1,0 +1,40 @@
+<div class="scoreboard" *ngIf="gameState$ | async as gameState">
+  <div class="stats-container">
+    <div class="score-item">
+      <!-- <div class="score-icon">
+        <i class="material-icons">touch_app</i>
+      </div> -->
+      <div class="score-data">
+        <div class="score-label">Moves</div>
+        <div class="score-value">{{ gameState.moves }}</div>
+      </div>
+    </div>
+
+    <div class="score-item">
+      <!-- <div class="score-icon">
+        <i class="material-icons">timer</i>
+      </div> -->
+      <div class="score-data">
+        <div class="score-label">Time</div>
+        <div class="score-value">{{ formatTime(gameState.timer) }}</div>
+      </div>
+    </div>
+
+    <div class="score-item">
+      <!-- <div class="score-icon">
+        <i class="material-icons">favorite</i>
+      </div> -->
+      <div class="score-data">
+        <div class="score-label">Pairs</div>
+        <div class="score-value">
+          {{ gameState.matchedPairs }} / {{ gameState.totalPairs }}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="action-container">
+    <button class="new-game-btn" (click)="onNewGame()">New Game</button>
+    <button class="restart-btn" (click)="onRestartGame()">Restart</button>
+  </div>
+</div>

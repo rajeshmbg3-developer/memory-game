@@ -1,0 +1,30 @@
+<div class="difficulty-select">
+  <h2>Memory Game</h2>
+  <p>Select difficulty level:</p>
+
+  <div class="difficulty-options">
+    <button
+      class="difficulty-btn"
+      [ngClass]="{ selected: difficulty === 'easy' }"
+      (click)="onDifficultyChange('easy')"
+    >
+      Easy (8 pairs)
+    </button>
+    <button
+      class="difficulty-btn"
+      [ngClass]="{ selected: difficulty === 'medium' }"
+      (click)="onDifficultyChange('medium')"
+    >
+      Medium (12 pairs)
+    </button>
+    <button
+      class="difficulty-btn"
+      [ngClass]="{ selected: difficulty === 'hard' }"
+      (click)="onDifficultyChange('hard')"
+    >
+      Hard (20 pairs)
+    </button>
+  </div>
+  <button class="start-btn" (click)="onStartGame()">Start Game</button>
+
+</div>

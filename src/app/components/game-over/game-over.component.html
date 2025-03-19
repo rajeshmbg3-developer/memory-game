@@ -1,0 +1,19 @@
+<div class="game-over-overlay" *ngIf="(gameState$ | async)?.gameCompleted">
+  <div class="game-over-modal">
+    <h2>Congratulations!</h2>
+    <p>You've completed the game with:</p>
+    <div class="stats" *ngIf="gameState$ | async as gameState">
+      <div class="stat-item">
+        <span class="stat-label">Moves:</span>
+        <span class="stat-value">{{ gameState.moves }}</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-label">Time:</span>
+        <span class="stat-value">{{ formatTime(gameState.timer) }}</span>
+      </div>
+    </div>
+    <div class="action-buttons">
+      <button class="play-again-btn" (click)="onPlayAgain()">Play Again</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,29 @@
+<div class="game-container">
+  <ng-container *ngIf="gameState$ | async as gameState">
+    <div *ngIf="!gameState.gameStarted" class="setup-container">
+      <app-difficulty-select
+        (difficultySelected)="onSetDifficulty($event)"
+        (startGame)="onStartGame()"
+      >
+      </app-difficulty-select>
+    </div>
+
+    <div *ngIf="gameState.gameStarted" class="game-board-container">
+      <app-scoreboard
+        (restart)="onRestartGame()"
+        (newGame)="onNewGame()"
+      ></app-scoreboard>
+
+      <div class="cards-grid" [ngClass]="getGridClass(gameState.cards.length)">
+        @for (card of gameState.cards; track $index+'card') {
+        <app-card [card]="card" (flip)="onCardFlip($event)"> </app-card>
+        }
+      </div>
+
+      <app-game-over
+        (playAgain)="onPlayAgain()"
+        (newGame)="onNewGame()"
+      ></app-game-over>
+    </div>
+  </ng-container>
+</div>
